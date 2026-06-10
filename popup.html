@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QA Form Filler</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+  <div class="header">
+    <span class="title">QA Form Filler</span>
+    <span class="badge">Digioh</span>
+  </div>
+
+  <div class="autofill-notice">
+    ⚡ Auto-fills forms as they appear
+  </div>
+
+  <!-- Email -->
+  <div class="section">
+    <div class="field-row">
+      <label for="email">Email</label>
+      <div class="input-group">
+        <input type="text" id="email" placeholder="hussain+1234@digioh.com" autocomplete="off">
+        <button id="generateEmail" class="icon-btn" title="Generate unique email">&#8635;</button>
+      </div>
+    </div>
+
+    <div class="field-row pattern-row">
+      <label for="emailPattern">Pattern</label>
+      <select id="emailPattern">
+        <option value="timestamp">hussain+[timestamp]@digioh.com</option>
+        <option value="counter">hussain+[N]@digioh.com</option>
+        <option value="date">hussain+[YYYYMMDD]@digioh.com</option>
+        <option value="custom">Custom base address</option>
+      </select>
+    </div>
+
+    <div id="customEmailRow" class="field-row" style="display:none">
+      <label for="customEmailBase">Base email</label>
+      <input type="text" id="customEmailBase" placeholder="you@example.com" autocomplete="off">
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Name -->
+  <div class="section">
+    <div class="two-col">
+      <div class="field-row">
+        <label for="firstName">First name</label>
+        <input type="text" id="firstName" placeholder="Test" autocomplete="off">
+      </div>
+      <div class="field-row">
+        <label for="lastName">Last name</label>
+        <input type="text" id="lastName" placeholder="User" autocomplete="off">
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="section">
+    <div class="field-row">
+      <label for="phone">Phone</label>
+      <input type="text" id="phone" placeholder="+1 555 000 1234" autocomplete="off">
+    </div>
+    <div class="two-col">
+      <div class="field-row">
+        <label for="country">Country</label>
+        <input type="text" id="country" placeholder="US" autocomplete="off">
+      </div>
+      <div class="field-row">
+        <label for="zip">Zip / Postal</label>
+        <input type="text" id="zip" placeholder="10001" autocomplete="off">
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Status -->
+  <div id="statusBar" class="status-bar" style="display:none"></div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <button id="savePreset" class="link-btn">Save as default</button>
+    <button id="clearPreset" class="link-btn danger">Clear saved</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
